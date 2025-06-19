@@ -1,0 +1,6 @@
+@InvennaOpdracht.Server_HostAddress = http://localhost:5070
+
+GET {{InvennaOpdracht.Server_HostAddress}}/api/geographicaldata/
+Accept: application/json
+
+###

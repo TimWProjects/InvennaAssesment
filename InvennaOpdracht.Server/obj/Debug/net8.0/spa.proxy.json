@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:54390",
+"RedirectUrl": "",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "C:\\Users\\TIM\\source\\repos\\InvennaOpdracht\\InvennaOpdracht.Server\\..\\invennaopdracht.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}

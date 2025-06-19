@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geographical Data Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .dashboard {
+      padding: 2rem;
+    }
+
+    .table-responsive {
+      margin-top: 1rem;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Geographical Data Dashboard</a>
+    </div>
+  </nav>
+
+  <div *ngIf="showForm; else tableView">
+    <app-geographicaldata-form [data]="selectedItem"
+                           (save)="handleSave($event)"
+                           (cancel)="handleCancel()">
+    </app-geographicaldata-form>
+  </div>
+
+  <ng-template #tableView>
+    <div class="container-fluid dashboard">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Geographical Address List</h2>
+        <div class="d-flex gap-2">
+          <button class="btn btn-success" (click)="addEntry()">Add</button>
+          <button class="btn btn-secondary" (click)="refreshTable()">Refresh</button>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Type to filter..."
+                   [(ngModel)]="searchText" (ngModelChange)="applyFilter()" />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+          <thead class="table-dark text-nowrap">
+            <tr>
+              <th>Actions</th>
+              <th (click)="sortBy('openbareRuimte')">Openbare Ruimte</th>
+              <th (click)="sortBy('huisnummer')">Huisnummer</th>
+              <th (click)="sortBy('huisLetter')">HuisLetter</th>
+              <th (click)="sortBy('huisNummerToevoeging')">Toevoeging</th>
+              <th (click)="sortBy('postcode')">Postcode</th>
+              <th (click)="sortBy('woonplaats')">Woonplaats</th>
+              <th (click)="sortBy('gemeente')">Gemeente</th>
+              <th (click)="sortBy('provincie')">Provincie</th>
+              <th (click)="sortBy('verblijfsobjectGebruiksdoel')">Verblijfsdoel</th>
+              <th (click)="sortBy('oppervlakteVerblijfsobject')">Oppervlakte</th>
+              <th (click)="sortBy('verblijfsobjectStatus')">Status</th>
+              <th (click)="sortBy('pandId')">Pand ID</th>
+              <th (click)="sortBy('pandBouwjaar')">Bouwjaar</th>
+              <th (click)="sortBy('lon')">Lon</th>
+              <th (click)="sortBy('lat')">Lat</th>
+            </tr>
+          </thead>
+          <tbody id="address-table-body">
+            <tr *ngFor="let item of filteredGeographicalDataItems; index as i">
+              <td class="text-nowrap">
+                <div class="action-buttons">
+                  <button class="btn btn-sm btn-warning" (click)="updateEntry(i)">Update</button>
+                  <button class="btn btn-sm btn-danger" (click)="deleteEntry(i)">Delete</button>
+                </div>
+              </td>
+              <td>{{item.openbareRuimte}}</td>
+              <td>{{item.huisnummer}}</td>
+              <td>{{item.huisLetter ?? ''}}</td>
+              <td>{{item.huisNummerToevoeging ?? ''}}</td>
+              <td>{{item.postcode}}</td>
+              <td>{{item.woonplaats}}</td>
+              <td>{{item.gemeente}}</td>
+              <td>{{item.provincie}}</td>
+              <td>{{item.verblijfsobjectGebruiksdoel}}</td>
+              <td>{{item.oppervlakteVerblijfsobject}}</td>
+              <td>{{item.verblijfsobjectStatus}}</td>
+              <td>{{item.pandId}}</td>
+              <td>{{item.pandBouwjaar}}</td>
+              <td>{{item.lon}}</td>
+              <td>{{item.lat}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-template>
+</body>
+</html>
+

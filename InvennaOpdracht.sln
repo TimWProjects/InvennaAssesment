@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36119.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "invennaopdracht.client", "invennaopdracht.client\invennaopdracht.client.esproj", "{B03A77DB-4175-037E-2C0E-A2FF25FF4D82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvennaOpdracht.Server", "InvennaOpdracht.Server\InvennaOpdracht.Server.csproj", "{E67CACB9-C7E4-498A-9123-60BF6AD5BA7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B03A77DB-4175-037E-2C0E-A2FF25FF4D82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03A77DB-4175-037E-2C0E-A2FF25FF4D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03A77DB-4175-037E-2C0E-A2FF25FF4D82}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B03A77DB-4175-037E-2C0E-A2FF25FF4D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03A77DB-4175-037E-2C0E-A2FF25FF4D82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B03A77DB-4175-037E-2C0E-A2FF25FF4D82}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E67CACB9-C7E4-498A-9123-60BF6AD5BA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E67CACB9-C7E4-498A-9123-60BF6AD5BA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E67CACB9-C7E4-498A-9123-60BF6AD5BA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E67CACB9-C7E4-498A-9123-60BF6AD5BA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A66F0AC3-E586-469F-B481-781E8344FF85}
+	EndGlobalSection
+EndGlobal
